@@ -12,7 +12,7 @@
     repo: "{{item.repo}}"
     version: "{{item.version}}"
     dest: "{{item.dest}}"
-    key_file: "{{git_key_remote}}"
+#    key_file: "{{git_key_remote}}"
   with_items:
     -
       repo: "{{git.controller.ats_aic.repo}}"

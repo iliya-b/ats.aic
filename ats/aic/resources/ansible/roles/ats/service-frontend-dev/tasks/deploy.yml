@@ -14,7 +14,7 @@
     repo: "{{git.ats.ats_frontend.repo}}"
     version: "{{git.ats.ats_frontend.version}}"
     dest: "{{service}}"
-    key_file: "{{git_key_remote}}"
+#    key_file: "{{git_key_remote}}"
     recursive: yes
 
 - name: install npm dependencies

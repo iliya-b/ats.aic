@@ -11,7 +11,7 @@
     repo: "{{git.ats[item.replace('.', '_')].repo}}"
     version: "{{git.ats[item.replace('.', '_')].version}}"
     dest: "{{src_dir}}/{{item}}"
-    key_file: "{{git_key_remote}}"
+    #key_file: "{{git_key_remote}}"
   with_items:
     - ats.client
     - ats.util

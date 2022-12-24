@@ -44,6 +44,7 @@ class Ubuntu(AICCommand):
 
     def take_action(self, parsed_args):
         version = '16.04'
+	alias='xenial'
         fname = 'ubuntu-%s-server-cloudimg-amd64-disk1.img' % version
 
         self.log.info('Checking if %s already exists.' % fname)
@@ -52,18 +53,18 @@ class Ubuntu(AICCommand):
             self.call('openstack', 'image', 'show', fname)
             self.log.info('Image already exists, nothing to do.')
         except ExecutionFailure:
-            self.download_image(self.local_images, fname, version)
+            self.download_image(self.local_images, fname, version, alias)
             self.upload_image(self.local_images, fname)
             self.log.info('Done.')
 
-    def download_image(self, imgp, fname, version):
+    def download_image(self, imgp, fname, version, alias):
         self.log.info('Downloading the %s Ubuntu image.' % version)
 
         with pushd(imgp):
             url = 'https://cloud-images.ubuntu.com/releases/%s/release/%s' % (
-                version, fname
+                alias, fname
             )
-            self.call('curl', '--remote-name', url)
+            self.call('curl', '--remote-name', url, '-L')
 
     def upload_image(self, imgp, fname):
         self.log.info('Uploading to OpenStack...')
