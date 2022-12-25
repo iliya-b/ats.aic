@@ -61,8 +61,8 @@ git:
       repo: https://github.com/AiC-Project/ats.senza.git
       version: v0.8
     ats_frontend:
-      repo: https://github.com/AiC-Project/frontend.git
-      #version: v0.8
+      repo: https://github.com/iliya-b/aic-frontend.git
+      version: v0.8
       develop: false
 
   sdl:
