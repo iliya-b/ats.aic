@@ -55,11 +55,11 @@ class Source(AICCommand):
         #           self.conf.git.sdl.dslcc.repo,
         #           dslcc_path(self.local_src))
 
-        self.log.info('Cloning Java -> APK compiler.')
-        self.call('git', 'clone',
-                  '-b', self.conf.git.sdl.testcc.version,
-                  self.conf.git.sdl.testcc.repo,
-                  testcc_path(self.local_src))
+        # self.log.info('Cloning Java -> APK compiler.')
+        # self.call('git', 'clone',
+        #           '-b', self.conf.git.sdl.testcc.version,
+        #           self.conf.git.sdl.testcc.repo,
+        #           testcc_path(self.local_src))
 
         self.log.info('Clone complete.')
 
@@ -118,9 +118,9 @@ class Build(AICCommand):
         #            if_missing='Please run "aic player source" and retry.'):
         #     self.call('make', 'clean', 'docker-images')
 
-        with pushd(testcc_path(self.local_src),
-                   if_missing='Please run "aic player source" and retry.'):
-            self.call('make', 'clean', 'docker-images')
+        # with pushd(testcc_path(self.local_src),
+        #            if_missing='Please run "aic player source" and retry.'):
+        #     self.call('make', 'clean', 'docker-images')
 
         self.log.info('Saving docker images...')
 
@@ -130,6 +130,7 @@ class Build(AICCommand):
                   docker_images_tar.as_posix(),
                   'aic.adb', 'aic.audio', 'aic.avmdata', 'aic.camera', # 'aic.dslcc',
                   'aic.ffserver', 'aic.prjdata', 'aic.sdl', 'aic.sensors',
-                  'aic.testcc', 'aic.xorg')
+                  #'aic.testcc', 
+                  'aic.xorg')
 
         self.log.info('Build complete in %s', docker_images_tar)
