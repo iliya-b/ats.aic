@@ -6,7 +6,7 @@
     repo: "{{git.sdl.player.repo}}"
     version: "{{git.sdl.player.version}}"
     dest: "{{build_dir}}"
-    key_file: "{{git_key_remote}}"
+#    key_file: "{{git_key_remote}}"
 
 - name: cmake .
   command: cmake .

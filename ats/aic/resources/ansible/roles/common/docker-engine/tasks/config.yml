@@ -39,21 +39,21 @@
     group: root
     mode: 0o700
 
-- name: set ExecStart in override.conf
-  become: yes
-  become_user: root
-  copy:
-    content: |
-      [Service]
-      ExecStart=
-      ExecStart=/usr/bin/docker daemon --config-file=/etc/docker/daemon.json
-    dest: /etc/systemd/system/docker.service.d/override.conf
-    owner: root
-    group: root
-    mode: 0o600
-  notify:
+# - name: set ExecStart in override.conf
+#   become: yes
+#   become_user: root
+#   copy:
+#     content: |
+#       [Service]
+#       ExecStart=
+#       ExecStart=/usr/bin/docker daemon --config-file=/etc/docker/daemon.json
+#     dest: /etc/systemd/system/docker.service.d/override.conf
+#     owner: root
+#     group: root
+#     mode: 0o600
+#   notify:
 #    - reload systemd  # need to do it ASAP
-    - restart docker
+#    - restart docker
 
 # force systemd reload now, before installing docker, to avoid an apt error
 - name: force systemd reload

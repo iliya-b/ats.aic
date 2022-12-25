@@ -1,47 +1,49 @@
 ---
 # vim: set ft=ansible:
 
-- name: add docker ppa key
-  become: yes
-  become_user: root
-  apt_key:
-    keyserver: hkp://keyserver.ubuntu.com:80
-    id: 58118E89F3A912897C070ADBF76221572C52609D
+#- name: add docker ppa key
+#  become: yes
+#  become_user: root
+#  apt_key:
+#    url: https://download.docker.com/linux/ubuntu/gpg
+#    state: present
+    #id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
-- name: add docker ppa
-  become: yes
-  become_user: root
-  apt_repository:
-    repo: deb https://apt.dockerproject.org/repo ubuntu-{{ ansible_lsb.codename }} main
-    state: present
+#- name: add docker ppa
+#  become: yes
+#  become_user: root
+#  apt_repository:
+#    repo: deb https://download.docker.com/linux/ubuntu xenial stable
+#    state: present
 
-- name: upgrade packages
-  become: yes
-  become_user: root
-  apt:
-    update_cache: yes
-    upgrade: dist
+#- name: upgrade packages
+#  become: yes
+#  become_user: root
+#  apt:
+#    update_cache: yes
+#    upgrade: dist
 
-- name: install docker package
-  become: yes
-  become_user: root
-  apt:
-    name: "{{item}}"
-    state: present
-  with_items:
-    - docker-engine=1.13.0-0~ubuntu-xenial
+#- name: install docker package
+#  become: yes
+#  become_user: root
+#  apt:
+#    name: "{{item}}"
+#    state: present
+#  with_items:
+#    - docker-ce
+    #=1.13.0-0~ubuntu-xenial
     # no loopback..
-    - linux-image-extra-{{ ansible_kernel }}
-    - linux-image-extra-virtual
-  notify:
-    - reload systemd
-    - restart docker
+    #- linux-image-extra-{{ ansible_kernel }}
+#    - linux-image-extra-virtual
+#  notify:
+#    - reload systemd
+#    - restart docker
 
-- name: add users to docker group
-  become: yes
-  become_user: root
-  user:
-    name: "{{deploy_user}}"
-    state: present
-    groups: docker
+#- name: add users to docker group
+#  become: yes
+ # become_user: root
+ # user:
+ #   name: "{{deploy_user}}"
+ #   state: present
+#    groups: docker
 

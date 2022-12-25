@@ -49,11 +49,11 @@ class Source(AICCommand):
                   self.conf.git.sdl.player_compose.repo,
                   player_compose_path(self.local_src))
 
-        self.log.info('Cloning DSL -> Java compiler.')
-        self.call('git', 'clone',
-                  '-b', self.conf.git.sdl.dslcc.version,
-                  self.conf.git.sdl.dslcc.repo,
-                  dslcc_path(self.local_src))
+        # self.log.info('Cloning DSL -> Java compiler.')
+        # self.call('git', 'clone',
+        #           '-b', self.conf.git.sdl.dslcc.version,
+        #           self.conf.git.sdl.dslcc.repo,
+        #           dslcc_path(self.local_src))
 
         self.log.info('Cloning Java -> APK compiler.')
         self.call('git', 'clone',
@@ -114,9 +114,9 @@ class Build(AICCommand):
                    if_missing='Please run "aic player source" and retry.'):
             self.call('make', 'clean', 'docker-images')
 
-        with pushd(dslcc_path(self.local_src),
-                   if_missing='Please run "aic player source" and retry.'):
-            self.call('make', 'clean', 'docker-images')
+        # with pushd(dslcc_path(self.local_src),
+        #            if_missing='Please run "aic player source" and retry.'):
+        #     self.call('make', 'clean', 'docker-images')
 
         with pushd(testcc_path(self.local_src),
                    if_missing='Please run "aic player source" and retry.'):
@@ -128,7 +128,7 @@ class Build(AICCommand):
 
         self.call('docker', 'save', '-o',
                   docker_images_tar.as_posix(),
-                  'aic.adb', 'aic.audio', 'aic.avmdata', 'aic.camera', 'aic.dslcc',
+                  'aic.adb', 'aic.audio', 'aic.avmdata', 'aic.camera', # 'aic.dslcc',
                   'aic.ffserver', 'aic.prjdata', 'aic.sdl', 'aic.sensors',
                   'aic.testcc', 'aic.xorg')
 

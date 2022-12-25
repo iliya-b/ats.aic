@@ -79,6 +79,6 @@ git:
       repo: https://github.com/AiC-Project/ats.testcc.git
       version: v0.8
     dslcc:
-      repo: https://github.com/AiC-Project/ats.dslcc.git
+      repo: https://github.com/iliya-b/ats.dslcc.git
       version: v0.8
 
