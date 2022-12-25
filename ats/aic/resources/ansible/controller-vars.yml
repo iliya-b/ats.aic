@@ -62,7 +62,7 @@ git:
       version: v0.8
     ats_frontend:
       repo: https://github.com/AiC-Project/frontend.git
-      version: v0.8
+      #version: v0.8
       develop: false
 
   sdl:
