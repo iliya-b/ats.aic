@@ -38,7 +38,7 @@ git:
 
   controller:
     ats_aic:
-      repo: https://github.com/AiC-Project/ats.aic.git
+      repo: https://github.com/iliya-b/ats.aic.git
       version: v0.8
 
   ats:
@@ -49,13 +49,13 @@ git:
       repo: https://github.com/AiC-Project/ats.util.git
       version: v0.8
     ats_authentication:
-      repo: https://github.com/AiC-Project/ats.authentication.git
+      repo: https://github.com/iliya-b/ats.authentication.git
       version: v0.8
     ats_authorization:
       repo: https://github.com/AiC-Project/ats.authorization.git
       version: v0.8
     ats_kyaraben:
-      repo: https://github.com/AiC-Project/ats.kyaraben.git
+      repo: https://github.com/iliya-b/ats.kyaraben.git
       version: v0.8
     ats_senza:
       repo: https://github.com/AiC-Project/ats.senza.git
