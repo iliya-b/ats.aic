@@ -18,7 +18,7 @@
   #
   # NB - upgrade plugin when upgrading rabbitmq to 3.6
   get_url:
-    url: http://www.rabbitmq.com/community-plugins/v3.5.x/rabbitmq_delayed_message_exchange-0.0.1-rmq3.5.x-9bf265e4.ez
+    url: https://github.com/ekapusta/docker-rabbitmq/raw/master/rabbitmq_delayed_message_exchange-0.0.1-rmq3.5.x-9bf265e4.ez
     dest: /usr/lib/rabbitmq/lib/rabbitmq_server-3.5.7/plugins/
     sha256sum: 87dff866bfd671a4e231557514f7e5a9e2f9ff7f898e2c2822614bd97c6d5137
 
