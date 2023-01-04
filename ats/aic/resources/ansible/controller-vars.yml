@@ -43,10 +43,10 @@ git:
 
   ats:
     ats_client:
-      repo: https://github.com/AiC-Project/ats.client.git
+      repo: https://github.com/iliya-b/ats.client.git
       version: v0.8
     ats_util:
-      repo: https://github.com/AiC-Project/ats.util.git
+      repo: https://github.com/iliya-b/ats.util.git
       version: v0.8
     ats_authentication:
       repo: https://github.com/iliya-b/ats.authentication.git
