@@ -13,7 +13,7 @@
     dest: "{{src_dir}}/{{item}}"
     #key_file: "{{git_key_remote}}"
   register: res
-  retries: 5
+  retries: 10
   until: res is success
   with_items:
     - ats.client

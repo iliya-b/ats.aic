@@ -6,35 +6,35 @@
   args:
     creates: "{{venv}}"
 
-- name: clone ats.client
-  git:
-    repo: "{{git.ats.ats_client.repo}}"
-    version: "{{git.ats.ats_client.version}}"
-    dest: "{{src_dir}}/ats.client"
-    key_file: "{{git_key_remote}}"
-  register: res
-  retries: 5
-  until: res is success
+# - name: clone ats.client
+#   git:
+#     repo: "{{git.ats.ats_client.repo}}"
+#     version: "{{git.ats.ats_client.version}}"
+#     dest: "{{src_dir}}/ats.client"
+#     key_file: "{{git_key_remote}}"
+#   register: res
+#   retries: 5
+#   until: res is success
 
-- name: clone ats.util
-  git:
-    repo: "{{git.ats.ats_util.repo}}"
-    version: "{{git.ats.ats_util.version}}"
-    dest: "{{src_dir}}/ats.util"
-    key_file: "{{git_key_remote}}"
-  register: res
-  retries: 5
-  until: res is success
+# - name: clone ats.util
+#   git:
+#     repo: "{{git.ats.ats_util.repo}}"
+#     version: "{{git.ats.ats_util.version}}"
+#     dest: "{{src_dir}}/ats.util"
+#     key_file: "{{git_key_remote}}"
+#   register: res
+#   retries: 5
+#   until: res is success
 
-- name: clone ats.authentication
-  git:
-    repo: "{{git.ats.ats_authentication.repo}}"
-    version: "{{git.ats.ats_authentication.version}}"
-    dest: "{{src_dir}}/ats.authentication"
-    key_file: "{{git_key_remote}}"
-  register: res
-  retries: 5
-  until: res is success
+# - name: clone ats.authentication
+#   git:
+#     repo: "{{git.ats.ats_authentication.repo}}"
+#     version: "{{git.ats.ats_authentication.version}}"
+#     dest: "{{src_dir}}/ats.authentication"
+#     key_file: "{{git_key_remote}}"
+#   register: res
+#   retries: 5
+#   until: res is success
 
 - name: install wheel
   command: "{{bin}}/pip install wheel"

@@ -17,7 +17,7 @@
 #    key_file: "{{git_key_remote}}"
     recursive: yes
   register: res
-  retries: 5
+  retries: 10
   until: res is success
   
 - name: install npm dependencies

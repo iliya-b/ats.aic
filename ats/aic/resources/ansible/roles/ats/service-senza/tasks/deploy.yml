@@ -17,7 +17,7 @@
     - ats.util
     - ats.senza
   register: res
-  retries: 5
+  retries: 10
   until: res is success
   
 - name: install wheel

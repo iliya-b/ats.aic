@@ -88,15 +88,15 @@
 #   args:
 #     creates: /usr/local/openresty/luajit/lib/luarocks/rocks/lua-resty-jwt
 
-- name: download authorization plugin
-  git:
-    repo: "{{git.ats.ats_authorization.repo}}"
-    version: "{{git.ats.ats_authorization.version}}"
-    dest: "{{src_authorization}}"
+# - name: download authorization plugin
+#   git:
+#     repo: "{{git.ats.ats_authorization.repo}}"
+#     version: "{{git.ats.ats_authorization.version}}"
+#     dest: "{{src_authorization}}"
   
-  register: res
-  retries: 5
-  until: res is success
+#   register: res
+#   retries: 10
+#   until: res is success
 
 - name: see if key.pem is provided by the user
   become: no
