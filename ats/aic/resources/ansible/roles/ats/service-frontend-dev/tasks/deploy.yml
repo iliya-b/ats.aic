@@ -16,7 +16,10 @@
     dest: "{{service}}"
 #    key_file: "{{git_key_remote}}"
     recursive: yes
-
+  register: res
+  retries: 5
+  until: res is success
+  
 - name: install npm dependencies
   command: npm install --production
   args:
