@@ -28,7 +28,7 @@
     key_file: "{{git_key_remote}}"
 
 - name: install wheel
-  command: "{{bin}}/pip install wheel"
+  command: "{{bin}}/pip install wheel==0.30.0"
 
 - name: install service
   command: "{{bin}}/pip install -r requirements/dev.txt"
