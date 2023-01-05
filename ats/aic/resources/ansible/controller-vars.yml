@@ -58,7 +58,7 @@ git:
       repo: https://github.com/iliya-b/ats.kyaraben.git
       version: v0.8
     ats_senza:
-      repo: https://github.com/AiC-Project/ats.senza.git
+      repo: https://github.com/iliya-b/ats.senza.git
       version: v0.8
     ats_frontend:
       repo: https://github.com/iliya-b/aic-frontend.git
