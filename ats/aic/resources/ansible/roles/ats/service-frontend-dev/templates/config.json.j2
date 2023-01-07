@@ -1,6 +1,6 @@
 {
   "backend": {
-    "protocol": "https",
+    "protocol": "http",
     "host": "{{ services.ats_gateway.hostname or hostvars['ats']['ip_floating'] }}",
     "port": {{ services.ats_gateway.port }},
     "timeout": 5000
