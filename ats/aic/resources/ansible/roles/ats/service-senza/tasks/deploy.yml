@@ -18,7 +18,9 @@
     - ats.senza
 
 - name: install wheel
-  command: "{{bin}}/pip install wheel"
+  command: "{{bin}}/pip install wheel==0.30.0"
+- name: install pbr
+  command: "{{bin}}/pip install pbr==1.10.0"
 
 - name: install service
   command: "{{bin}}/pip install -r requirements/dev.txt"
