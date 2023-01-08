@@ -99,8 +99,8 @@
     -
       role: common/docker-engine
       docker_hosts:
-        - fd://
         - unix:///var/run/docker.sock
+        - tcp://0.0.0.0:2376
       docker_conf_suffix: ""
     - role: common/docker-compose
     - role: ats/docker-bashrc-config

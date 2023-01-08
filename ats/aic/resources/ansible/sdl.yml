@@ -37,7 +37,7 @@
     - role: common/docker-engine
       docker_hosts:
         - unix:///var/run/docker.sock
-        - tcp://{{sdl_hostname}}:2376
+        - tcp://0.0.0.0:2376
       docker_conf_suffix: ".ssl"
 
     #
