@@ -12,6 +12,9 @@
     version: "{{git.ats[item.replace('.', '_')].version}}"
     dest: "{{src_dir}}/{{item}}"
     #key_file: "{{git_key_remote}}"
+  register: res
+  retries: 10
+  until: res is success
   with_items:
     - ats.client
     - ats.util

@@ -16,7 +16,10 @@
     - ats.client
     - ats.util
     - ats.senza
-
+  register: res
+  retries: 10
+  until: res is success
+  
 - name: install wheel
   command: "{{bin}}/pip install wheel==0.30.0"
 - name: install pbr

@@ -26,8 +26,8 @@
     - role: common/create-secrets
     - role: common/hosts
     - role: ats/hosts
-    - role: common/mail
-      root_alias: "{{admin_email}}"
+#    - role: common/mail
+#      root_alias: "{{admin_email}}"
     -
       role: common/create-user
       username: "{{deploy_user}}"
@@ -49,11 +49,11 @@
     # AMQP, DBMS
     #
 
-    -
-      role: ats/rabbitmq
-      become: yes
-      become_user: root
-    - role: ats/postgres
+    # -
+    #   role: ats/rabbitmq
+    #   become: yes
+    #   become_user: root
+    # - role: ats/postgres
 
     #
     # AiC deployment
